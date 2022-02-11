@@ -1,0 +1,44 @@
+.container {
+  padding: 20px 10px;
+  margin: 0 auto;
+}
+
+.headerContent > h1 {
+  padding: 0;
+  margin: 4px 0;
+  color: rgb(2, 2, 2);
+}
+.featured {
+  background: yellow;
+  padding: 2px 5px;
+}
+.description {
+  color: #222;
+  line-height: 1.8rem;
+}
+.date {
+  font-weight: bold;
+  color: rgb(90, 87, 87);
+}
+.address {
+  color: rgb(90, 40, 105);
+  font-style: normal;
+}
+.commentForm {
+  background: #d1d5db;
+  width: 100vw;
+  padding: 20px;
+}
+
+.showComments__btn {
+  background: #155e75;
+  color: #67e8f9;
+  padding: 13px 20px;
+  border: 2px solid #0e7490;
+  font-size: medium;
+  margin: 20px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}

@@ -1,0 +1,34 @@
+import { useEffect, useState } from 'react';
+import styles from '../styles/comments.module.css';
+
+const Comments = ({ eventId, showComments }) => {
+  const [comments, setComment] = useState([]);
+  const [loading, setLoading] = useState(false);
+
+  useEffect(async () => {
+    setLoading(true);
+    const res = await fetch(`/api/comments/${eventId}`);
+    const { comments } = await res.json();
+    setComment(comments);
+    setLoading(false);
+  }, [showComments]);
+
+  if (loading) {
+    return <p>Loading comments...</p>;
+  }
+  if (comments.length === 0) {
+    return <p className={styles.alert}>No comments found</p>;
+  }
+  return (
+    <div className={styles.comments__container}>
+      {comments.map((c) => (
+        <div className={styles.wrapper} key={c._id}>
+          <h4 className={styles.name}>{c.name}</h4>
+          <p className={styles.comment}>{c.comment}</p>
+        </div>
+      ))}
+    </div>
+  );
+};
+
+export default Comments;
